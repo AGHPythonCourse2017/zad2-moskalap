@@ -17,6 +17,10 @@ class Controller:
 
     def analyze(self):
 
+        self.initialize()
+         #count *
+         #fork
+
         started_evt = Event()
         t = Thread(target=self.simple_task, args=(started_evt,))
         t.start()
@@ -27,5 +31,15 @@ class Controller:
         if t.is_alive():
             self.run=False
 
+    def initialize(self):
+        #init
+
+
+class Task():
+    def __init__(self, initialization_code, analyzable, clean_up = None):
+        self.initalization_code = initialization_code
+        self.analyzable = analyzable
+        self.clean_up = clean_up
+        self.initialize_structures
 c = Controller(3,12)
 c.analyze()

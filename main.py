@@ -10,12 +10,13 @@ p = prs.Parser()
 
 controller = cntrl.Controller(p)
 
-with open('./countit/temporary_files/init.py', 'r') as content_file:
-    content = content_file.read()
-exec(content)
-j = controller.run()
-b = Test(2)
-j()
+for i in range(0,6):
+    f = controller.run(i)
+    f()
+    print(a)
+
+#exec("funkcja(1,2)")
+#abst_fun(1,"ad")
 #exec()
 #print(a)
 

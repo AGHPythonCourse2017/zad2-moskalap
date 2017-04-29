@@ -1,6 +1,7 @@
 import argparse
 from argparse import RawTextHelpFormatter
 
+
 class Parser:
     def __init__(self):
         self.parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter)
@@ -19,4 +20,5 @@ class Parser:
                                  help='Timeout for algorithm in seconds, default 30',
                                  default=30.0,
                                  type=float)
-        self.parser.parse_args()
+        self.args = self.parser.parse_args()
+

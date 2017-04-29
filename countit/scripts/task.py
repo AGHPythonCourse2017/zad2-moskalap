@@ -17,6 +17,8 @@ class Task:
             return ", ".join(self.args_list)
 
     def __init__(self, initialization, analzyable, clean_up):
+
+
         beg = analzyable.find('(')
         end = analzyable.rfind(')')
         from countit.exceptions import AnalyzablePatternError
@@ -28,6 +30,7 @@ class Task:
             raise AnalyzablePatternError(') .... (')
 
         self.argument = self.Arguments(analzyable[beg+1 : end])
+
 
 
 
