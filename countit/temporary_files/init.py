@@ -1,1 +1,0 @@
-a = print('This is problem for'+ str(_N_))

@@ -1,4 +1,4 @@
-import cmptcomplexity.scripts.parser as prs
+
 import cmptcomplexity.scripts.controller as cntrl
 import cmptcomplexity.scripts.task as ctask
 import logging
