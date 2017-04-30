@@ -11,7 +11,7 @@ class Task:
 
 
         if '__N__' not in init_code and '__N__' not in example_invoke:
-            from cmptcomplexity.exceptions import ArgumentPatternError
+            from cmptcomplexity.scripts.exceptions import ArgumentPatternError
             raise ArgumentPatternError('There is no "__N__" to scale an problem size!')
         self.init_code = init_code
         self.example_invoke = example_invoke
