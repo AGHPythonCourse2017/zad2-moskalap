@@ -17,6 +17,8 @@ PREREQUISITES
 =============
 
 cmptcomplexity requires the following software installed for your platform:
+
+
 0) UNIX-like system supporting signal communication
 
 1) Python__ 2.7 or >= 3.4
@@ -29,8 +31,10 @@ __ http://www.numpy.org/
 
 3) MatPlotLib__
 
--- http://matplotlib.org/
+__ http://matplotlib.org/
 
+4) --optional-- Scipy__
+__ http://matplotlib.org/
 
 INSTALLING CMPTCOMPLEXITY
 =========================
