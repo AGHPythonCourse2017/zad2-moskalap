@@ -5,7 +5,7 @@ import logging
 
 def log_it(func):
     def wrap(*args, **kwargs):
-        logging.info('started function %s', func.__name__)
+        logging.info('started function %s (%s)', func.__name__,str(args)+str (kwargs))
         result = func(*args, **kwargs)
         logging.info('function %s returned %s', func.__name__, str(result))
         return result
