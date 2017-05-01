@@ -1,1 +1,0 @@
-countingSort(array, mn, mx)

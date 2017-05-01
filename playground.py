@@ -4,7 +4,7 @@ setup = sys.argv[1]
 proper = sys.argv[2]
 
 
-a,t = aproximator.count_it(proper,setup, timeout=15)
+a,t = aproximator.count_it(proper,setup, timeout=10)
 a.show(t)
 
 
