@@ -35,8 +35,7 @@ class Controller:
             if timeo == 0:
                 timeo = 0.00001
             i = random.randint(MIN, MAX)
-            logging.info('Checking time for N=%s range (0, %s)\nRemainging time=%fs', str(i), str(MAX), timeo,
-                         str((timeout - timeo) / float((timeo))))
+            logging.info('Checking time for N=%s range (0, %s)\nRemainging time=%fs', str(i), str(MAX), timeo)
             timeout = timeo
 
             c_y, timeo = avrg_measure(self.task, i, r, n)
