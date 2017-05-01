@@ -1,16 +1,16 @@
-How to use CMPTCOMPLEXITY
-+++++++++++++++++++++++++
+CMPTCOMPLEXITY
+++++++++++++++
 
 
 
 .. Contents::
 
 
-INSTALLING CMPTCOMPLEXITY
-=========================
+INTRODUCTION
+============
 
 
-some introduction
+cmptcomplexity is a Python module for
 
 
 PREREQUISITES
