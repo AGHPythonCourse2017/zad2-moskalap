@@ -1,1 +1,1 @@
-sorted(l)
+quickSort(l)

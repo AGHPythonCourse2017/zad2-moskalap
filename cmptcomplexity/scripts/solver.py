@@ -85,9 +85,9 @@ class Solver:
 
             plt.xlabel('problem size[N]')
             plt.ylabel('time [MSEC]')
-            plt.legend(loc=2, prop={'size': 6})
+            plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
             plt.show()
-            plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=1200)
+            plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
 
     def __init__(self, x, y):
 
