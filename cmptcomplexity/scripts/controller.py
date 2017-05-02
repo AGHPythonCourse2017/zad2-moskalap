@@ -51,7 +51,7 @@ class Controller:
                         if n > 10:
                             n -= 1
                         if MAX > 100:
-                            MAX //= 10
+                            MAX //= 1.25
 
                     x.append(i)
                     logging.info('to run alarm %s', str(timeo))
