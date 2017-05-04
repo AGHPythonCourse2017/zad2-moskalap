@@ -54,6 +54,13 @@ Type::
 
 USING CMPTCOMPLEXITY
 ====================
-.. code-block:: python
-import cmptcomplexity.aprox as aproximator
-results = aproximator.countit()
+
+
+To run cmptcomplexity after installation, execute in Python
+
+   >>> import cmptcomplexity.aprox as cmpt
+   >>> result = cmpt.count_it()
+
+
+
+   >>> result.show()
