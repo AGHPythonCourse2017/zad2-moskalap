@@ -39,25 +39,21 @@ __ http://matplotlib.org/
 INSTALLING CMPTCOMPLEXITY
 =========================
 
-
-
-
 Development version from Git
 ----------------------------
 Use the command::
 
-  git clone
-
-Documentation
--------------
-Type::
-
-  cd
-  make html
-
-
+  pip3 install git+https://github.com/AGHPythonCourse2017/zad2-moskalap.git
 
 UNINSTALLING
 ============
+Type::
 
-some text
+  pip3 uninstall cmptcomplexity
+
+
+USING CMPTCOMPLEXITY
+====================
+.. code-block:: python
+import cmptcomplexity.aprox as aproximator
+results = aproximator.countit()

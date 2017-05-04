@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='cmptcomplexity',
     version='',
-    packages=['cmptcomplexity', 'cmptcomplexity.test', 'cmptcomplexity.test.unit', 'cmptcomplexity.test.unusued',
+    packages=['cmptcomplexity', 'cmptcomplexity.tests', 'cmptcomplexity.tests.unit', 'cmptcomplexity.tests.unusued',
               'cmptcomplexity.scripts'],
     url='',
     license='',
