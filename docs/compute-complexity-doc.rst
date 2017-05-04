@@ -72,10 +72,13 @@ PYTHON INTERFACE
 ================
 
 The main function (count_it) is included in cmptcomplexity.aprox
-Before using this function, is neccesary to preapare a simple strutures for an algorithm.
+Before using this function, is neccesary to preapare a simple strutures for an algorithm:
 
-1) pattern_invoke:
-2) init_code:
+pattern_invoke
+    A pattern of invoking tested function/method/class, with '__N__' as size-problem parameter.
+
+init_code(optional)
+    clean_up_code(optional):
 
 This structure can be written in file
 
