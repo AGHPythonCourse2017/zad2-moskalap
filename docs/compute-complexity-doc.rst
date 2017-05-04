@@ -35,6 +35,7 @@ __ http://www.numpy.org/
 __ http://matplotlib.org/
 
 4) --optional-- Scipy__
+
 __ http://matplotlib.org/
 
 INSTALLING CMPTCOMPLEXITY
@@ -72,6 +73,7 @@ PYTHON INTERFACE
 
 The main function (count_it) is included in cmptcomplexity.aprox
 Before using this function, is neccesary to preapare a simple strutures for an algorithm.
+
 1) pattern_invoke:
 2) init_code:
 
