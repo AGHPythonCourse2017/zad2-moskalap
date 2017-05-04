@@ -77,6 +77,7 @@ Before using this function, is neccesary to preapare a simple strutures for an a
 pattern_invoke
     A pattern of invoking tested function/method/class, with '__N__' as size-problem parameter.
     pattern_invoke could be string or a path to file, where this string is typed.
+
     example
         Let's assume object **example_object** and method *example_method(arg1, arg2, arg3, arg4)*, where *arg3* is problem-size parameter.
         Proper structure would be like
