@@ -10,7 +10,8 @@ INTRODUCTION
 ============
 
 
-cmptcomplexity is a Python module for
+cmptcomplexity is a Python module, providing a way to deduce computational complexity of given bits of Python code.
+
 
 
 PREREQUISITES
@@ -54,13 +55,31 @@ Type::
 
 USING CMPTCOMPLEXITY
 ====================
+cmptcomplexity
 
-
-To run cmptcomplexity after installation, execute in Python
+To run cmptcomplexity after installation, first, you  have to import module
 
    >>> import cmptcomplexity.aprox as cmpt
+
    >>> result = cmpt.count_it()
 
 
 
    >>> result.show()
+
+PYTHON INTERFACE
+================
+
+The main function (count_it) is included in cmptcomplexity.aprox
+Before using this function, is neccesary to preapare a simple strutures for an algorithm.
+1) pattern_invoke:
+2) init_code:
+
+This structure can be written in file
+
+cmptcomplexity.aprox.count_it(pattern_invoke, init_code="", clean_up_code="", timeout=30, log_verbose=True)::
+
+
+    pattern_invoke - speciefies a invoking pattern for tested function or class.
+    init_code - file path or string with initialization of proper stuctures
+
