@@ -10,7 +10,8 @@ INTRODUCTION
 ============
 
 
-cmptcomplexity is a Python module, providing a way to deduce computational complexity of given bits of Python code.
+cmptcomplexity is a Python module, providing a way to deduce computational complexity of given Python code bits.
+
 
 
 
@@ -34,7 +35,7 @@ __ http://www.numpy.org/
 
 __ http://matplotlib.org/
 
-4) --optional-- Scipy__
+4)  Scipy__
 
 __ http://matplotlib.org/
 
@@ -60,7 +61,7 @@ USING CMPTCOMPLEXITY
 BASIC USE
 ---------
 
-To run cmptcomplexity after installation, first, you  have to import module
+To run cmptcomplexity after installation, first, you have to import module
 
    >>> import cmptcomplexity.aprox as cmpt
 
@@ -92,45 +93,45 @@ The main function (count_it) is included in cmptcomplexity.aprox.
 *cmptcomplexity.aprox.*
 **count_it(pattern_invoke, init_code, clean_up_code, timeout, verbose)**
 
-Before using this function, is neccesary to preapare a simple strutures for an algorithm:
+Before using this function, is necessary to prepare a simple structures for an algorithm:
 
 pattern_invoke
-    A pattern of invoking tested function/method/class, with '__N__' as size-problem parameter.
+    An invoking pattern of tested function/method/class, with '__N__' as size-problem parameter.
     pattern_invoke could be string or a path to file, where this string is typed.
 
     example
-        Let's assume object **example_object** and method **example_method(arg1, arg2, arg3, arg4)**, where **arg3** is problem-size parameter.
-        Proper structure would be like
+        Let's assume object **example_object** with method **example_method(arg1, arg2, arg3, arg4)**, where **arg3** is problem-sized parameter.
+        Proper structure assignment would be like
 
         >>> pattern_invoke = 'example_object.example_method(arg1,arg2,__N__,arg4)'
 
-        or, when you a have a file **/home/user/dir0/dir1/pattern.py'** with
+        alternatively, you could create a file **/home/user/dir0/dir1/pattern.py'** with following content
 
         .. code-block:: python
 
             example_object.example_method(arg1,arg2,__N__,arg4)
 
-        assign pattern_invoke to path to this file
+        and then assign pattern_invoke to path to this file
 
         >>> pattern_invoke = '/home/user/dir0/dir1/pattern.py'
 
 
 init_code(optional)
-    This strucure contains a code, which time execution shouldn't be measured.
-    The creation of this stucture is similiar to **pattern_invoke**.If you want to test self-defined class/method/function,  in this structure you should include, all definitions of functions
+    This structure contains a code, which time execution shouldn't be measured.
+    The creation of this structure is similar to **pattern_invoke**. If you want to test self-defined class/method/function, in this structure you should include all functions definitions.
 
     example
-        Let's assume we want deduce a computional complexity of sorting a list. It is necesary to crate a list with random numbers. If it depends on problem size, you have to write '__N__' as an problem-size argument
+        Let's assume we want deduce a computional complexity of sorting a list. It is necessary to create a list with randomly generated numbers. If it depends on problem size, you have to write '__N__' as an problem-size argument.
     >>> init_code = 'import random; list = [random.randint(0,10000) for i in range(__N__)]'
 
-    or, you could also create a *.py file with
+    alternatively, you could also create a *.py file with
 
     .. code-block:: python
 
         import random
         list = [random.randint(0,10000) for i in range(__N__)]
 
-    and give a path to file
+    and then assign a path to *init_code* variable
 
     >>> init_code = '/home/user/path/to/file.py'
 
@@ -146,25 +147,17 @@ timeout
     Sets a time for algorithm in seconds. Default 30s.
 
 log_verbose
-    specify a loggeer options
+    Specify a logger options.
 
       .. code-block:: python
 
-        log_verbose = True # Puts all logging message to Standard outpt.
-        log_verbose = False # Puts only warning message to Standard outpt.
-        log_verbose = 'path/to/file.log' #creates a log file at given path
+        log_verbose = True `Puts all logging message to Standard output.`
+        log_verbose = False `Puts only warning messages to Standard output.`
+        log_verbose = 'path/to/file.log' `creates a log file at given path`
 
-    defalut: True
-
-
-
-This structure can be written in file
-
-cmptcomplexity.aprox.count_it(pattern_invoke, init_code="", clean_up_code="", timeout=30, log_verbose=True)::
+    defalut: True, so all logger message would be displayed on screen.
 
 
-    pattern_invoke - speciefies a invoking pattern for tested function or class.
-    init_code - file path or string with initialization of proper stuctures
 RETURN VALUE
 ------------
 count_it(pattern_invoke, init_code, clean_up_code, timeout, verbose) returns an object of Result class, with fields:
