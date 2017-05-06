@@ -3,14 +3,15 @@ import signal
 import cmptcomplexity.scripts.exceptions as exceptions
 import logging
 
+
 def log_it(func):
     def wrap(*args, **kwargs):
-        logging.info('started function %s (%s)', func.__name__,str(args)+str (kwargs))
+        logging.info('invoked function %s (%s)', func.__name__, str(args) + str(kwargs))
         result = func(*args, **kwargs)
-        logging.info('function %s returned %s', func.__name__, str(result))
         return result
 
     return wrap
+
 
 def timeout():
     def decorator(func):
@@ -18,8 +19,8 @@ def timeout():
             raise exceptions.TimeoutCCExcetion('ops')
 
         def wrapper(*args, **kwargs):
-            ltou, _ = signal.setitimer(signal.ITIMER_REAL, 0)
-            signal.setitimer(signal.ITIMER_REAL, ltou)
+            to_alarm, _ = signal.setitimer(signal.ITIMER_REAL, 0)
+            signal.setitimer(signal.ITIMER_REAL, to_alarm)
             signal.signal(signal.SIGALRM, _handle_timeout)
 
             try:
@@ -28,10 +29,10 @@ def timeout():
                 return 0, 'except'
 
             finally:
-                ltou, _ = signal.setitimer(signal.ITIMER_REAL, 0)
-                signal.setitimer(signal.ITIMER_REAL, ltou)
+                to_alarm, _ = signal.setitimer(signal.ITIMER_REAL, 0)
+                signal.setitimer(signal.ITIMER_REAL, to_alarm)
 
-            return result, ltou
+            return result, to_alarm
 
         return wraps(func)(wrapper)
 
