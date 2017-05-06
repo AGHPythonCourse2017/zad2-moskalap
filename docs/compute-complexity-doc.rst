@@ -21,23 +21,17 @@ PREREQUISITES
 cmptcomplexity requires the following software installed for your platform:
 
 
-0) UNIX-like system supporting signal communication
-
-1) Python__ 2.7 or >= 3.4
-
-__ http://www.python.org
-
-2) NumPy__ >= 1.8.2
+1) NumPy__
 
 __ http://www.numpy.org/
 
-3) MatPlotLib__
+2) MatPlotLib__
 
 __ http://matplotlib.org/
 
-4)  Scipy__
+3)  Scipy__
 
-__ http://matplotlib.org/
+__ https://www.scipy.org/
 
 INSTALLING CMPTCOMPLEXITY
 =========================
@@ -83,7 +77,7 @@ After executing this, you can:
 
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
+:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
 
 
 
@@ -104,14 +98,14 @@ The main function (count_it) is included in cmptcomplexity.aprox.
 *cmptcomplexity.aprox.*
 **count_it(pattern_invoke, init_code, clean_up_code, timeout, verbose)**
 
-Before using this function, is necessary to prepare a simple structures for an algorithm:
+Before using this function, it is necessary to prepare a simple structures for an algorithm:
 
 pattern_invoke
-    An invoking pattern of tested function/method/class, with '__N__' as size-problem parameter.
+    An invoking pattern of tested function/method/class, with '__N__' as a size-problem parameter.
     pattern_invoke could be string or a path to file, where this string is typed.
 
     example
-        Let's assume object **example_object** with method **example_method(arg1, arg2, arg3, arg4)**, where **arg3** is problem-sized parameter.
+        Let's assume an object **example_object** with the method **example_method(arg1, arg2, arg3, arg4)**, where **arg3** is problem-sized parameter.
         Proper structure assignment would be like
 
         >>> pattern_invoke = 'example_object.example_method(arg1,arg2,__N__,arg4)'
@@ -122,14 +116,14 @@ pattern_invoke
 
             example_object.example_method(arg1,arg2,__N__,arg4)
 
-        and then assign pattern_invoke to path to this file
+        and then assign pattern_invoke to a path to this file
 
         >>> pattern_invoke = '/home/user/dir0/dir1/pattern.py'
 
 
 init_code(optional)
     This structure contains a code, which time execution shouldn't be measured.
-    The creation of this structure is similar to **pattern_invoke**. If you want to test self-defined class/method/function, in this structure you should include all functions definitions.
+    The creation of this structure is similar to **pattern_invoke**. If you want to test a self-defined class/method/function, in this structure you should include all functions definitions.
 
     example
         Let's assume we want deduce a computional complexity of sorting a list. It is necessary to create a list with randomly generated numbers. If it depends on problem size, you have to write '__N__' as an problem-size argument.
@@ -166,20 +160,21 @@ log_verbose
         log_verbose = False `Puts only warning messages to Standard output.`
         log_verbose = 'path/to/file.log' `creates a log file at given path`
 
-    defalut: True, so all logger message would be displayed on screen.
+    default: True
 
 
 RETURN VALUE
 ------------
-count_it(pattern_invoke, init_code, clean_up_code, timeout, verbose) returns an object of Result class, with fields:
+count_it(pattern_invoke, init_code, clean_up_code, timeout, verbose) returns an object of Result class, with:
 
 .. code-block:: python
 
     class Result:
         self.complexity `information about complexity of algorithm <- ['O(N), O(N^2)']`
         self.in_time() #returns a function time-> size(time), which count, how big problem can be solved in time msec
-        self.how_long() #returns a function n-> time(n), which count, how long it take to solve n - sized problem
-        self.show() #shows a plot of mesured, with no argument just show, with file patg as argument saves a *png image
+        self.how_long() #returns a function n-> time(n), which says, how long it take to solve n - sized problem (in msec)
+        self.show() #shows a plot of masaured
+        self.show('path-to-file/plot.png') #saves the plot
 
 
 EXAMPLE USES
@@ -225,7 +220,7 @@ Binary Search
 
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
+:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
 
 BubbleSort
 ----------
@@ -259,7 +254,7 @@ BubbleSort
     >>> results.show() # shows a graph
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
+:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
 
 
 
@@ -318,7 +313,7 @@ HeapSort
 
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
+:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
 
 
 
@@ -331,5 +326,5 @@ list append
     >>> results.show() # shows a graph
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
+:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
 
