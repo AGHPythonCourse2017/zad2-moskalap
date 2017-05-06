@@ -42,28 +42,25 @@ class Solver:
                                     math.exp(fun_tuple[1][0] / fun_tuple[0][0])) + str(fun_tuple[0][0]))),
                 'constant': (lambda x: sum(self.y) / len(self.y), 'O(1)')
             }[complexity]
-            def count_invert_quadr(c,b,a):
-                delta = b**2  -4*a*c
-                p = -b/(2*a)
-                q = -delta/(4*a)
-                #y = a(x-p)^2 +q
-                #y - q = a(x-p)^2
-                #sqrt ( (y-q)/a ) = x - p -> x = (sqrt ( (y-q)/a )) + p
 
-                return lambda x:  math.sqrt(( (y-q)/a ))+p
+            def count_invert_quadr(c, b, a):
+                delta = b ** 2 - 4 * a * c
+                p = -b / (2 * a)
+                q = -delta / (4 * a)
+
+                return lambda x: math.sqrt(((y - q) / a)) + p
 
             if complexity != 'xlogx_ratios':
-
-
                 self.inverse_fun = {
-                    'linear_ratios': lambda x: (x - fun_tuple[0][0])/fun_tuple[1][0],
+                    'linear_ratios': lambda x: (x - fun_tuple[0][0]) / fun_tuple[1][0],
                     'square_ratios': count_invert_quadr(fun_tuple[0][0], fun_tuple[1][0], fun_tuple[2][0]),
-                    'logx_ratios': math.pow(2,((x - fun_tuple[0][0])/fun_tuple([0][1]))),
+                    'logx_ratios': math.pow(2, ((x - fun_tuple[0][0]) / fun_tuple([0][1]))),
                     'constant': lambda x: x / (sum(self.y) / len(self.y))
                 }[complexity]
 
         def how_long(self):
             return self.fun[0]
+
         def in_time(self):
             if self.complexity_k == 'xlogx_ratios':
 
@@ -85,18 +82,18 @@ class Solver:
                                 high = midpoint
 
                         return midpoint
-                    return bisect(lambda x: self.fun[0](x) - a,1,999999999)
+
+                    return bisect(lambda x: self.fun[0](x) - a, 1, 999999999)
 
                 return fun
 
             else:
                 return self.inverse_fun
 
-
         def show(self, title=None):
 
             import matplotlib
-            #matplotlib.use('Agg')
+            # matplotlib.use('Agg')
             import matplotlib.pyplot as plt
             import numpy as np
             charts = self.sheet.keys()
@@ -135,14 +132,12 @@ class Solver:
 
             plt.xlabel('problem size[N]')
             plt.ylabel('time [MSEC]')
-            #plt.legend(loc='upper right', bbox_to_anchor=(0.5, 0.5), borderaxespad=0.)
-            plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3)
-            plt.subplots_adjust(right=0.75, top=0.74)
-            plt.show()
+
             if title:
                 plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
             else:
 
+                plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3)
                 plt.subplots_adjust(right=0.75, top=0.74)
                 plt.show()
             plt.clf()

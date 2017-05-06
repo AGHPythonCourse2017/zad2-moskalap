@@ -23,7 +23,19 @@ def count_it(pattern_invoke,  # pattern of invoking code, with __N__ for problem
                             datefmt='%m/%d/%Y %I:%M:%S %p')
 
     logging.info('started program with arguments %s', sys.argv)
-    task = ctask.Task(init_code, clean_up_code, example_invoke=pattern_invoke)
+    import cmptcomplexity.scripts.exceptions as excp
+    try:
+        task = ctask.Task(init_code, clean_up_code, example_invoke=pattern_invoke)
+        controller = cntrl.Controller(task, timeout)
+        return controller.get_data()
 
-    controller = cntrl.Controller(task, timeout)
-    return controller.get_data()
+    except excp.WrongTimeoutCCExcetion:
+        print("The time out must be > 0.5")
+        exit(-1)
+    except excp.ArgumentPatternError:
+        print('There must be "__N__" as a size-problem parameter')
+        exit(-1)
+
+    finally:
+        if task.clean_up_code != "":
+            exec(clean_up_code)
