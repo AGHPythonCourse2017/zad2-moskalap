@@ -21,7 +21,7 @@ class Controller:
             return (sum(msrs) / len(msrs)) / n
 
         if self.timeout < 0.5:
-            raise excp.WrongTimeoutCCExcetion('Timeout must be > 0.5')
+            raise excp.WrongTimeoutCCException('Timeout must be > 0.5')
         timeout = self.timeout
         signal.setitimer(signal.ITIMER_REAL, timeout)
         import logging
