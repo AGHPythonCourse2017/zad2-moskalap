@@ -26,4 +26,4 @@ def count_it(pattern_invoke,  # pattern of invoking code, with __N__ for problem
     task = ctask.Task(init_code, clean_up_code, example_invoke=pattern_invoke)
 
     controller = cntrl.Controller(task, timeout)
-    return controller.get_data(), task.stringify_example_invoke('N')
+    return controller.get_data()

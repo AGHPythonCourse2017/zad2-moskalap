@@ -44,7 +44,7 @@ class Solver:
             }[complexity]
 
         def how_long(self):
-            return self.complexity[0]
+            return self.fun[0]
 
         def show(self, title=None):
 
