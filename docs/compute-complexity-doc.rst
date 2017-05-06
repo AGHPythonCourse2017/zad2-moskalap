@@ -74,6 +74,11 @@ After executing this, you can:
 
     >>> results.complexity #'O(N log N)'
     >>> results.show() #shows a plot
+
+
+.. image:: bsresult
+        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
+    >>> results.show('sorted') #saves a plot to file sorted_plot.png
     >>> how_long = results.how_long()
     >>> how_long(100000) #42.769611954961221
     >>> in_time = results.in_time()
@@ -218,5 +223,3 @@ Binary Search
     >>> results.max_in_time(100) # counts maximum problem in 100 msec
     >>> results.time_of(23441) # counts time of execution for 23441 problem size
 
-    .. image:: bsresult
-        :target:
