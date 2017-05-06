@@ -1,9 +1,8 @@
+import logging
+import sys
+
 import cmptcomplexity.scripts.controller as cntrl
 import cmptcomplexity.scripts.task as ctask
-import logging
-import cmptcomplexity.scripts.strings as ss
-import sys
-import timeit
 
 
 def count_it(pattern_invoke,  # pattern of invoking code, with __N__ for problem size
@@ -27,9 +26,9 @@ def count_it(pattern_invoke,  # pattern of invoking code, with __N__ for problem
     try:
         task = ctask.Task(init_code, clean_up_code, example_invoke=pattern_invoke)
         controller = cntrl.Controller(task, timeout)
-        return controller.get_data()
+        data = controller.get_data()
 
-    except excp.WrongTimeoutCCExcetion:
+    except excp.WrongTimeoutCCException:
         print("The time out must be > 0.5")
         exit(-1)
     except excp.ArgumentPatternError:
@@ -37,5 +36,13 @@ def count_it(pattern_invoke,  # pattern of invoking code, with __N__ for problem
         exit(-1)
 
     finally:
+
         if task.clean_up_code != "":
-            exec(clean_up_code)
+            try:
+                exec(clean_up_code)
+            except Exception:
+                # Ignoring others exception, data is very important
+                logging.error('Something went wrong, returned tuple("err", partial_data)')
+                return 'err', data
+        else:
+            return data
