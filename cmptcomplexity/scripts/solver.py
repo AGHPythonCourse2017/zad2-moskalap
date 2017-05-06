@@ -84,7 +84,7 @@ class Solver:
                                 high = midpoint
 
                         return midpoint
-                    return bisect(self.fun[0],-100,999999999)
+                    return bisect(self.fun[0],1,999999999)
 
                 return fun
 
