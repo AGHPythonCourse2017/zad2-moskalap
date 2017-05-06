@@ -43,6 +43,9 @@ class Solver:
                 'constant': (lambda x: sum(self.y) / len(self.y), 'O(1)')
             }[complexity]
 
+        def how_long(self):
+            return self.complexity[0]
+
         def show(self, title):
 
             import matplotlib
