@@ -49,7 +49,7 @@ class Solver:
         def show(self, title=None):
 
             import matplotlib
-            matplotlib.use('Agg')
+            #matplotlib.use('Agg')
             import matplotlib.pyplot as plt
             import numpy as np
             charts = self.sheet.keys()
@@ -92,9 +92,7 @@ class Solver:
             plt.show()
             if title:
                 plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
-            plt.clf()
-            plt.cla()
-            plt.close()
+
     def __init__(self, x, y):
 
         self.points = []
