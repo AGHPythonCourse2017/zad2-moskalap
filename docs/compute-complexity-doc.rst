@@ -77,7 +77,6 @@ After executing this, you can:
 
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
-:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
 
 
 
@@ -188,9 +187,9 @@ Binary Search
     .. code-block:: python
 
         def binarySearch(alist, item):
-        first = 0
-        last = len(alist)-1
-        found = False
+            first = 0
+            last = len(alist)-1
+            found = False
         while first<=last and not found:
             midpoint = (first + last)//2
             if alist[midpoint] == item:
@@ -220,7 +219,6 @@ Binary Search
 
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
-:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
 
 BubbleSort
 ----------
@@ -254,8 +252,6 @@ BubbleSort
     >>> results.show() # shows a graph
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
-:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
-
 
 
 
@@ -313,8 +309,6 @@ HeapSort
 
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
-:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
-
 
 
 list append
@@ -326,5 +320,3 @@ list append
     >>> results.show() # shows a graph
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-:target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-
