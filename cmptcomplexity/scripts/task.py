@@ -2,6 +2,8 @@ import logging
 
 
 class Task:
+    """Class for representing most of problems in unified way"""
+
     def __init__(self, init_code, clean_up_code, example_invoke):
         def open_with_logger(filename):
             try:
