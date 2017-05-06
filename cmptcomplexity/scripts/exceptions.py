@@ -1,4 +1,4 @@
-class ComputeComplexityException(Exception): #super exception for module
+class ComputeComplexityException(Exception):  # super exception for module
     pass
 
 
@@ -10,7 +10,7 @@ class TimeoutCCExcetion(ComputeComplexityException):
         return self.val
 
 
-class WrongTimeoutCCExcetion(ComputeComplexityException):
+class WrongTimeoutCCException(ComputeComplexityException):
     def __init__(self, val):
         self.val = val
 
@@ -18,17 +18,7 @@ class WrongTimeoutCCExcetion(ComputeComplexityException):
         return self.val
 
 
-
-
-class InitializationError:
-    def __init__(self, val):
-        self.val=val
-
-    def __str__(self):
-        return self.val
-
-
-class ArgumentPatternError(Exception):
+class InitializationError(ComputeComplexityException):
     def __init__(self, val):
         self.val = val
 
@@ -36,7 +26,15 @@ class ArgumentPatternError(Exception):
         return self.val
 
 
-class AnalyzablePatternError(Exception):
+class ArgumentPatternError(ComputeComplexityException):
+    def __init__(self, val):
+        self.val = val
+
+    def __str__(self):
+        return self.val
+
+
+class AnalyzablePatternError(ComputeComplexityException):
     def __init__(self, val):
         self.val = val
 
