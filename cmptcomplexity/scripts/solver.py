@@ -68,6 +68,7 @@ class Solver:
             if self.complexity_k == 'xlogx_ratios':
 
                 def fun(a):
+
                     def bisect(func, low, high):
                         'Find root of continuous function where f(low) and f(high) have opposite signs'
 
@@ -84,7 +85,7 @@ class Solver:
                                 high = midpoint
 
                         return midpoint
-                    return bisect(self.fun[0],1,999999999)
+                    return bisect(lambda x: self.fun[0](x) - a,1,999999999)
 
                 return fun
 
