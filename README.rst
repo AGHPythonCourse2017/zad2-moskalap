@@ -17,6 +17,4 @@ https://github.com/AGHPythonCourse2017/zad2-moskalap
 License information
 -------------------
 
-See the file ``LICENSE.txt`` for information on the history of this
-software, terms & conditions for usage, and a DISCLAIMER OF ALL
-WARRANTIES.
+See the file ``LICENSE``
