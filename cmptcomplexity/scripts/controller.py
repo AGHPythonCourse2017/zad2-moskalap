@@ -50,7 +50,7 @@ class Controller:
             else:
 
                 if to_alarm > 0.5:
-                    if (timeout - to_alarm) / float((to_alarm)) < 0.1:
+                    if (timeout - to_alarm) / float(to_alarm) < 0.1:
                         MAX = i + MAX
                         n += 1
                     else:
