@@ -279,7 +279,7 @@ HEAP  SORT
 
     .. code-block:: python
 
-        bubbleSort(list)
+
         def heapsort(lst):
         ''' Heapsort. Note: this function sorts in-place (it mutates the list). '''
          # in pseudo-code, heapify only called once, so inline it here
