@@ -76,10 +76,6 @@ After executing this, you can:
     >>> results.show() #shows a plot
 
 
-.. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
-
-
 
     >>> results.show('sorted') #saves a plot to file sorted_plot.png
     >>> how_long = results.how_long()
@@ -89,6 +85,8 @@ After executing this, you can:
     >>>
 
 
+ .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
+        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
 
 
 
