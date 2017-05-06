@@ -141,6 +141,13 @@ class Solver:
             plt.show()
             if title:
                 plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
+            else:
+
+                plt.subplots_adjust(right=0.75, top=0.74)
+                plt.show()
+            plt.clf()
+            plt.cla()
+            plt.close()
 
     def __init__(self, x, y):
 
