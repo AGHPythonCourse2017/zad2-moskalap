@@ -73,12 +73,12 @@ To get information about complexity of sorting list, you could type
 After executing this, you can:
 
     >>> results.complexity #'O(N log N)'
-    >>> results.show() #shows a plot
-    >>> results.show('sorted') #saves a plot to file sorted_plot.png
     >>> how_long = results.how_long()
     >>> how_long(100000) #42.769611954961221
     >>> in_time = results.in_time()
     >>> in_time(42.76) # 99979.94052065522
+    >>> results.show() #shows a plot
+    >>> results.show('sorted') #saves a plot to file sorted_plot.png
     >>>
 
 
