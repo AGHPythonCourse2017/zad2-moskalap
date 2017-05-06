@@ -42,9 +42,55 @@ class Solver:
                                     math.exp(fun_tuple[1][0] / fun_tuple[0][0])) + str(fun_tuple[0][0]))),
                 'constant': (lambda x: sum(self.y) / len(self.y), 'O(1)')
             }[complexity]
+            def count_invert_quadr(c,b,a):
+                delta = b**2  -4*a*c
+                p = -b/(2*a)
+                q = -delta/(4*a)
+                #y = a(x-p)^2 +q
+                #y - q = a(x-p)^2
+                #sqrt ( (y-q)/a ) = x - p -> x = (sqrt ( (y-q)/a )) + p
+
+                return lambda x:  math.sqrt(( (y-q)/a ))+p
+
+            if complexity != 'xlogx_ratios':
+
+
+                self.inverse_fun = {
+                    'linear_ratios': lambda x: (x - fun_tuple[0][0])/fun_tuple[1][0],
+                    'square_ratios': count_invert_quadr(fun_tuple[0][0], fun_tuple[1][0], fun_tuple[2][0]),
+                    'logx_ratios': math.pow(2,((x - fun_tuple[0][0])/fun_tuple([0][1]))),
+                    'constant': lambda x: x / (sum(self.y) / len(self.y))
+                }[complexity]
 
         def how_long(self):
             return self.fun[0]
+        def in_time(self):
+            if self.complexity_k == 'xlogx_ratios':
+
+                def fun(a):
+                    def bisect(func, low, high):
+                        'Find root of continuous function where f(low) and f(high) have opposite signs'
+
+                        def samesign(a, b):
+                            return a * b > 0
+
+                        assert not samesign(func(low), func(high))
+
+                        for i in range(54):
+                            midpoint = (low + high) / 2.0
+                            if samesign(func(low), func(midpoint)):
+                                low = midpoint
+                            else:
+                                high = midpoint
+
+                        return midpoint
+                    return bisect(self.fun[0],-100,999999999)
+
+                return fun
+
+            else:
+                return self.inverse_fun
+
 
         def show(self, title=None):
 
@@ -88,7 +134,9 @@ class Solver:
 
             plt.xlabel('problem size[N]')
             plt.ylabel('time [MSEC]')
-            plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+            #plt.legend(loc='upper right', bbox_to_anchor=(0.5, 0.5), borderaxespad=0.)
+            plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3)
+            plt.subplots_adjust(right=0.75, top=0.74)
             plt.show()
             if title:
                 plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
@@ -147,7 +195,7 @@ class Solver:
 
         import math
 
-        def aproximate_leas_square(base):
+        def aproximate_least_square(base):
             import numpy as np
             base_fun = base[0]
 
@@ -173,6 +221,6 @@ class Solver:
         if the_most_accurate == 'constant':
             self.sheet[the_most_accurate] = tuple([[1], [1]])
         else:
-            aproximate_leas_square(base[the_most_accurate])
+            aproximate_least_square(base[the_most_accurate])
 
         return self.Result(self.x, self.y, the_most_accurate, self.sheet)
