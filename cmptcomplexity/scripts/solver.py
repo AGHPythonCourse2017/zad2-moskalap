@@ -23,7 +23,7 @@ class Solver:
             if len(fun_tuple) == 2:
                 p1, p2 = fun_tuple
 
-                fun_tuple = (p1, p2, [0])
+                fun_tuple = (p1, p2, [1])
             print(fun_tuple)
 
             self.fun = {
