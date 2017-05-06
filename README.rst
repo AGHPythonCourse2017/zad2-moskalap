@@ -227,7 +227,7 @@ Binary Search
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
 
-BUBBLESORT
+BubbleSort
 ----------
 
 0) Create a file *init-b-sort.py* with content
@@ -265,13 +265,15 @@ BUBBLESORT
 
 
 
-HEAP  SORT
-----------
+HeapSort
+--------
 
 
 0) Create a file *exec-h-sort.py* with content
 
     .. code-block:: python
+
+
         heapsort(array)
 
 
@@ -283,13 +285,13 @@ HEAP  SORT
         def heapsort(lst):
         ''' Heapsort. Note: this function sorts in-place (it mutates the list). '''
          # in pseudo-code, heapify only called once, so inline it here
-        for start in range((len(lst) - 2) // 2, -1, -1):
-            siftdown(lst, start, len(lst) - 1)
+            for start in range((len(lst) - 2) // 2, -1, -1):
+                siftdown(lst, start, len(lst) - 1)
 
-        for end in range(len(lst) - 1, 0, -1):
-            lst[end], lst[0] = lst[0], lst[end]
-            siftdown(lst, 0, end - 1)
-        return lst
+            for end in range(len(lst) - 1, 0, -1):
+                lst[end], lst[0] = lst[0], lst[end]
+                siftdown(lst, 0, end - 1)
+            return lst
 
 
         def siftdown(lst, start, end):
@@ -330,15 +332,4 @@ list append
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-
-
-
-quick SORT
-----------
-
-    .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/quicksort_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/quicksort_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-
-
-
 

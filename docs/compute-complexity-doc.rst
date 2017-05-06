@@ -227,7 +227,7 @@ Binary Search
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
 
-BUBBLESORT
+BubbleSort
 ----------
 
 0) Create a file *init-b-sort.py* with content
@@ -265,13 +265,15 @@ BUBBLESORT
 
 
 
-HEAP  SORT
-----------
+HeapSort
+--------
 
 
 0) Create a file *exec-h-sort.py* with content
 
     .. code-block:: python
+
+
         heapsort(array)
 
 
@@ -330,15 +332,4 @@ list append
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-
-
-
-quick SORT
-----------
-
-    .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/quicksort_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/quicksort_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
-
-
-
 
