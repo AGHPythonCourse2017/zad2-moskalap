@@ -22,25 +22,31 @@ class Solver:
             import math
             if len(fun_tuple) == 2:
                 p1, p2 = fun_tuple
-
-                fun_tuple = (p1, p2, [1])
-            print(fun_tuple)
+                fun_tuple = (p1, p2, 1)
 
             self.fun = {
+                # dictionary of tuples (complexity_fun as lambda, string representation)
 
                 'linear_ratios': (
-                    lambda x: fun_tuple[0][0] + x * fun_tuple[1][0],
-                    str(fun_tuple[1][0]) + 'N+' + str(fun_tuple[0][0])),
-                'square_ratios': (lambda x: fun_tuple[0][0] + x * fun_tuple[1][0] + fun_tuple[2][0] * x ** 2,
-                                  str(fun_tuple[2][0]) + 'N^2+' + str(fun_tuple[1][0]) + 'N+' + str(fun_tuple[0][0])),
-                'xlogx_ratios': (lambda x: fun_tuple[0][0] * x * math.log2(x) + fun_tuple[1][0] * x,
-                                 str(fun_tuple[0][0]) + 'N log(' + str(
-                                     math.exp((fun_tuple[1][0] / fun_tuple[0][0]) ** 2)) + 'N)'),
-                'logx_ratios': (lambda x: fun_tuple[0][0] + math.log2(x) * fun_tuple[1][0],
-
-                                str(str(fun_tuple[1][0]) + 'log' + str(
-                                    math.exp(fun_tuple[1][0] / fun_tuple[0][0])) + str(fun_tuple[0][0]))),
-                'constant': (lambda x: sum(self.y) / len(self.y), 'O(1)')
+                    lambda x: fun_tuple[0] + x * fun_tuple[1],
+                    str(fun_tuple[1]) + 'N+' + str(fun_tuple[0])
+                ),
+                'square_ratios': (
+                    lambda x: fun_tuple[0] + x * fun_tuple[1] + fun_tuple[2] * x ** 2,
+                    str(fun_tuple[2]) + 'N^2+' + str(fun_tuple[1]) + 'N+' + str(fun_tuple[0])
+                ),
+                'xlogx_ratios': (
+                    lambda x: fun_tuple[0] * x * math.log2(x) + fun_tuple[1] * x,
+                    str(fun_tuple[0]) + 'N log(' + str(math.exp((fun_tuple[1] / fun_tuple[0]) ** 2)) + 'N)'
+                ),
+                'logx_ratios': (
+                    lambda x: fun_tuple[0] + math.log2(x) * fun_tuple[1],
+                    str(str(fun_tuple[1]) + 'log' + str(math.exp(fun_tuple[1] / fun_tuple[0])) + str(fun_tuple[0]))
+                ),
+                'constant': (
+                    lambda x: sum(self.y) / len(self.y)
+                    , 'O(' + str(sum(self.y) / len(self.y)) + ')'
+                )
             }[complexity]
 
             def count_invert_quadr(c, b, a):
@@ -48,13 +54,13 @@ class Solver:
                 p = -b / (2 * a)
                 q = -delta / (4 * a)
 
-                return lambda x: math.sqrt(((y - q) / a)) + p
+                return lambda arg: math.sqrt(((arg - q) / a)) + p
 
             if complexity != 'xlogx_ratios':
                 self.inverse_fun = {
-                    'linear_ratios': lambda x: (x - fun_tuple[0][0]) / fun_tuple[1][0],
-                    'square_ratios': count_invert_quadr(fun_tuple[0][0], fun_tuple[1][0], fun_tuple[2][0]),
-                    'logx_ratios':lambda x: math.pow(2, ((x - fun_tuple[0][0]) / fun_tuple([1][0]))),
+                    'linear_ratios': lambda x: (x - fun_tuple[0]) / fun_tuple[1],
+                    'square_ratios': count_invert_quadr(fun_tuple[0], fun_tuple[1], fun_tuple[2]),
+                    'logx_ratios': lambda x: math.pow(2, ((x - fun_tuple[0]) / fun_tuple([1]))),
                     'constant': lambda x: x / (sum(self.y) / len(self.y))
                 }[complexity]
 
@@ -67,7 +73,6 @@ class Solver:
                 def fun(a):
 
                     def bisect(func, low, high):
-                        'Find root of continuous function where f(low) and f(high) have opposite signs'
 
                         def samesign(a, b):
                             return a * b > 0
@@ -83,7 +88,7 @@ class Solver:
 
                         return midpoint
 
-                    return bisect(lambda x: self.fun[0](x) - a, 1, 999999999)
+                    return bisect(lambda x: self.fun[0](x) - a, 1, 9999999999)
 
                 return fun
 
@@ -91,9 +96,8 @@ class Solver:
                 return self.inverse_fun
 
         def show(self, title=None):
+            """Shows a plot of measured times"""
 
-            import matplotlib
-            # matplotlib.use('Agg')
             import matplotlib.pyplot as plt
             import numpy as np
             charts = self.sheet.keys()
@@ -203,15 +207,15 @@ class Solver:
             base_fun = base[0]
 
             A = np.matrix([list([base_fun[i](x) for i in range(len(base_fun))]) for x in self.x])
-
             AT = A.transpose()
             A = np.dot(AT, A)
             b = np.matrix([list([x]) for x in self.y])
             Y = np.dot(AT, b)
+
             from scipy.linalg import solve
             X = solve(A, Y)
 
-            self.sheet[the_most_accurate] = tuple(X)
+            self.sheet[the_most_accurate] = tuple(i[0] for i in X)
 
         base = {
             # (base, ratios)
@@ -222,7 +226,7 @@ class Solver:
             'constant': (lambda x: sum(self.y) / len(self.y), 0, 0, ('const', 's'))
         }
         if the_most_accurate == 'constant':
-            self.sheet[the_most_accurate] = tuple([[1], [1]])
+            self.sheet[the_most_accurate] = (1, 1)
         else:
             aproximate_least_square(base[the_most_accurate])
 
