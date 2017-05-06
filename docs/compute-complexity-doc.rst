@@ -74,9 +74,6 @@ After executing this, you can:
 
     >>> results.complexity #'O(N log N)'
     >>> results.show() #shows a plot
-
-
-
     >>> results.show('sorted') #saves a plot to file sorted_plot.png
     >>> how_long = results.how_long()
     >>> how_long(100000) #42.769611954961221
@@ -85,7 +82,7 @@ After executing this, you can:
     >>>
 
 
- .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
+    .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/sorted_plot.png?token=AWCREl9JX-_57k3FLB0UyIl52kAYEdNHks5ZFyCJwA%3D%3D
 
 
