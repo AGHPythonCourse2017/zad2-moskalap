@@ -224,7 +224,7 @@ Binary Search
     >>> results.show() # shows a graph
 
 
-    .. image:: 3D
+    .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
 
 
