@@ -230,15 +230,33 @@ Binary Search
 BUBBLESORT
 ----------
 
-    .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
-        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
+0) Create a file *init-b-sort.py* with content
+
+    .. code-block:: python
+
+        def bubbleSort(alist):
+            for passnum in range(len(alist)-1,0,-1):
+                for i in range(passnum):
+                    if alist[i]>alist[i+1]:
+                        temp = alist[i]
+                        alist[i] = alist[i+1]
+                        alist[i+1] = temp
+
+        import random
+        list = [random.randint(0,100000) for i in range(__N__)]
+
+1) Create a file *exec-b-sort.py* with content
+
+    .. code-block:: python
+
+        bubbleSort(list)
 
 
+2) In Python interactive mode type:
 
-
-
-BUBBLESORT
-----------
+    >>> import cmptcomplexity.aprox as ap
+    >>> results = ap.countit(pattern_invoke = 'path/to/exec-b-sort.py',init_code='path/to/init-b-sort.py',timeout=30,log_verbose=True)
+    >>> results.show() # shows a graph
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/bubblesort_plot.png?token=AWCREshMKaFLjCfQh5Gj9xrVjK_x_O5aks5ZFysEwA%3D%3D
@@ -249,14 +267,66 @@ BUBBLESORT
 
 HEAP  SORT
 ----------
+
+
+0) Create a file *exec-h-sort.py* with content
+
+    .. code-block:: python
+        heapsort(array)
+
+
+1) Create a file *init-h-sort.py* with content
+
+    .. code-block:: python
+
+        bubbleSort(list)
+        def heapsort(lst):
+        ''' Heapsort. Note: this function sorts in-place (it mutates the list). '''
+         # in pseudo-code, heapify only called once, so inline it here
+        for start in range((len(lst) - 2) // 2, -1, -1):
+            siftdown(lst, start, len(lst) - 1)
+
+        for end in range(len(lst) - 1, 0, -1):
+            lst[end], lst[0] = lst[0], lst[end]
+            siftdown(lst, 0, end - 1)
+        return lst
+
+
+        def siftdown(lst, start, end):
+            root = start
+            while True:
+                child = root * 2 + 1
+                if child > end: break
+                if child + 1 <= end and lst[child] < lst[child + 1]:
+                    child += 1
+                if lst[root] < lst[child]:
+                    lst[root], lst[child] = lst[child], lst[root]
+                    root = child
+                else:
+                    break
+
+        import random
+        array = [random.randint(0,1000000) for i in range(__N__)]
+
+2) In Python interactive mode type:
+
+    >>> import cmptcomplexity.aprox as ap
+    >>> results = ap.countit(pattern_invoke = 'path/to/exec-h-sort.py',init_code='path/to/init-h-sort.py',timeout=30,log_verbose=True)
+    >>> results.show() # shows a graph
+
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/heapsort_plot.png?token=AWCREnwS_SzUL6cbAeYbTv0KrY38BIJSks5ZFys5wA%3D%3D
 
 
 
-HEAP  SORT
-----------
+list append
+-----------
+0) In Python interactive mode type:
+
+    >>> import cmptcomplexity.aprox as ap
+    >>> results = ap.countit(pattern_invoke = 'l.append(513)',init_code='import random; l = [random.randint(0,1000000) for i in range(__N__)]',timeout=30,log_verbose=True)
+    >>> results.show() # shows a graph
 
     .. image:: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
         :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/list.append()_plot.png?token=AWCREskpk9JyJ-UJFbKWHkvZsSFoGgLtks5ZFytuwA%3D%3D
