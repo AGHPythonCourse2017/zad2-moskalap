@@ -46,7 +46,7 @@ class Solver:
         def how_long(self):
             return self.complexity[0]
 
-        def show(self, title):
+        def show(self, title=None):
 
             import matplotlib
             matplotlib.use('Agg')
@@ -90,8 +90,11 @@ class Solver:
             plt.ylabel('time [MSEC]')
             plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
             plt.show()
-            plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
-
+            if title:
+                plt.savefig(title + '_plot.png', ext='png', bbox_inches='tight', dpi=200)
+            plt.clf()
+            plt.cla()
+            plt.close()
     def __init__(self, x, y):
 
         self.points = []
