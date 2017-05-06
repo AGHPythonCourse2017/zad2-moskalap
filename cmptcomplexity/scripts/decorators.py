@@ -1,7 +1,8 @@
-from functools import wraps
-import signal
-import cmptcomplexity.scripts.exceptions as exceptions
 import logging
+import signal
+from functools import wraps
+
+import cmptcomplexity.scripts.exceptions as exceptions
 
 
 def log_it(func):
