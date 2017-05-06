@@ -220,7 +220,13 @@ Binary Search
 
     >>> import cmptcomplexity.aprox as ap
     >>> results = ap.countit(pattern_invoke = 'path/to/exec-b-search.py',init_code='path/to/init-b-search.py',timeout=30,log_verbose=True)
+    >>> r # shows a graph
     >>> results.show() # shows a graph
-    >>> results.max_in_time(100) # counts maximum problem in 100 msec
-    >>> results.time_of(23441) # counts time of execution for 23441 problem size
+
+
+    .. image:: 3D
+        :target: https://raw.githubusercontent.com/AGHPythonCourse2017/zad2-moskalap/master/docs/img/binarySearch_plot.png?token=AWCREgQTcOXWrQP64Nlo66HK7RxWGwrnks5ZFyp3wA%3D%3D
+
+
+
 
