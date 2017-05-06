@@ -54,7 +54,7 @@ class Solver:
                 self.inverse_fun = {
                     'linear_ratios': lambda x: (x - fun_tuple[0][0]) / fun_tuple[1][0],
                     'square_ratios': count_invert_quadr(fun_tuple[0][0], fun_tuple[1][0], fun_tuple[2][0]),
-                    'logx_ratios': math.pow(2, ((x - fun_tuple[0][0]) / fun_tuple([0][1]))),
+                    'logx_ratios': math.pow(2, ((x - fun_tuple[0][0]) / fun_tuple([1][0]))),
                     'constant': lambda x: x / (sum(self.y) / len(self.y))
                 }[complexity]
 
