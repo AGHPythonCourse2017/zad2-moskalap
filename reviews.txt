@@ -1,2 +1,3 @@
 https://github.com/AGHPythonCourse2017/zad01-binaryladyinblack/pull/1
 https://github.com/AGHPythonCourse2017/zad01-luknw/pull/1
+https://github.com/AGHPythonCourse2017/zad01-cano601/pull/1
