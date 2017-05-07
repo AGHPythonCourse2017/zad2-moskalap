@@ -23,6 +23,7 @@ def count_it(pattern_invoke,  # pattern of invoking code, with __N__ for problem
 
     logging.info('started program with arguments %s', sys.argv)
     import cmptcomplexity.scripts.exceptions as excp
+    task = []
     try:
         task = ctask.Task(init_code, clean_up_code, example_invoke=pattern_invoke)
         controller = cntrl.Controller(task, timeout)

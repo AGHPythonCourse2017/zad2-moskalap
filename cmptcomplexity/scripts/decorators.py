@@ -17,7 +17,7 @@ def log_it(func):
 def timeout():
     def decorator(func):
         def _handle_timeout(signum, frame):
-            raise exceptions.TimeoutCCExcetion('ops')
+            raise exceptions.TimeoutCCException('ops')
 
         def wrapper(*args, **kwargs):
             to_alarm, _ = signal.setitimer(signal.ITIMER_REAL, 0)
@@ -26,7 +26,7 @@ def timeout():
 
             try:
                 result = func(*args, **kwargs)
-            except exceptions.TimeoutCCExcetion:
+            except exceptions.TimeoutCCException:
                 return 0, 'except'
 
             finally:

@@ -2,7 +2,7 @@ class ComputeComplexityException(Exception):  # super exception for module
     pass
 
 
-class TimeoutCCExcetion(ComputeComplexityException):
+class TimeoutCCException(ComputeComplexityException):
     def __init__(self, val):
         self.val = val
 
